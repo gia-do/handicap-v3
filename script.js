@@ -181,3 +181,6 @@ document.getElementById("finalScore").innerHTML=
 `Final Score<br>Player1 ${score1} : ${score2} Player2`
 
 }
+function restart(){
+location.reload()
+}
