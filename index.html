@@ -1,24 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>RPS Handicap</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="container">
+<!-- SCREEN 1 -->
 
-<h1>RESULT!</h1>
+<div id="screen1" class="screen">
+
+<h2>Choose Rounds</h2>
+
+<div class="stepper">
+Player 1
+<button id="p1minus">-</button>
+<span id="p1value">5</span>
+<button id="p1plus">+</button>
+</div>
+
+<div class="stepper">
+Player 2
+<button id="p2minus">-</button>
+<span id="p2value">5</span>
+<button id="p2plus">+</button>
+</div>
+
+<button id="start">START</button>
+
+</div>
+
+
+<!-- SCREEN 2 PLAYER 1 -->
+
+<div id="screen2" class="screen">
+
+<h2>PLAYER 1</h2>
+
+<div id="p1grid" class="grid"></div>
+
+<button id="confirmP1">CONFIRM</button>
+
+</div>
+
+
+<!-- PASS SCREEN -->
+
+<div id="screenPass" class="screen">
+
+<h2>PASS THE PHONE<br>TO PLAYER 2</h2>
+
+<button id="ready">READY</button>
+
+</div>
+
+
+<!-- SCREEN 2 PLAYER 2 -->
+
+<div id="screen3" class="screen">
+
+<h2>PLAYER 2</h2>
+
+<div id="p2grid" class="grid"></div>
+
+<button id="confirmP2">CONFIRM</button>
+
+</div>
+
+
+<!-- RESULT SCREEN -->
+
+<div id="screenResult" class="screen">
+
+<h2>RESULT</h2>
 
 <table>
 <thead>
 <tr>
 <th>#</th>
-<th>Player 1</th>
-<th>Player 2</th>
+<th>P1</th>
+<th>P2</th>
 </tr>
 </thead>
 
@@ -26,14 +89,13 @@
 
 </table>
 
-<div id="finalResult" class="resultBox"></div>
+<div id="finalResult"></div>
 
-<div class="buttons">
 <button id="replay">Replay</button>
 <button id="reset">Reset</button>
-</div>
 
 </div>
+
 
 <script src="script.js"></script>
 
