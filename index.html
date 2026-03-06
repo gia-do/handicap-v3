@@ -1,98 +1,84 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>RPS Handicap</title>
+<meta charset="UTF-8">
+<title>Handicap RPS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <!-- SCREEN 1 -->
-
 <div id="screen1" class="screen">
 
 <h2>Choose Rounds</h2>
 
-<div class="stepper">
-Player 1
-<button id="p1minus">-</button>
-<span id="p1value">5</span>
-<button id="p1plus">+</button>
+<div class="roundRow">
+<span>Player 1</span>
+<button onclick="changeRound('p1',-1)">-</button>
+<span id="p1Rounds">5</span>
+<button onclick="changeRound('p1',1)">+</button>
 </div>
 
-<div class="stepper">
-Player 2
-<button id="p2minus">-</button>
-<span id="p2value">5</span>
-<button id="p2plus">+</button>
+<div class="roundRow">
+<span>Player 2</span>
+<button onclick="changeRound('p2',-1)">-</button>
+<span id="p2Rounds">5</span>
+<button onclick="changeRound('p2',1)">+</button>
 </div>
 
-<button id="start">START</button>
-
-</div>
-
-
-<!-- SCREEN 2 PLAYER 1 -->
-
-<div id="screen2" class="screen">
-
-<h2>PLAYER 1</h2>
-
-<div id="p1grid" class="grid"></div>
-
-<button id="confirmP1">CONFIRM</button>
+<button class="bigButton" onclick="startSelection()">START</button>
 
 </div>
 
 
-<!-- PASS SCREEN -->
+<!-- SCREEN 2A -->
+<div id="screen2a" class="screen">
 
-<div id="screenPass" class="screen">
+<h2>Player 1 – Choose Moves</h2>
 
-<h2>PASS THE PHONE<br>TO PLAYER 2</h2>
+<div id="p1Grid"></div>
 
-<button id="ready">READY</button>
+<button class="bigButton" onclick="confirmP1()">CONFIRM</button>
 
 </div>
 
 
-<!-- SCREEN 2 PLAYER 2 -->
+<!-- PASS PHONE -->
+<div id="passPhone" class="screen">
 
+<h2>PASS THE PHONE</h2>
+<p>Give the phone to Player 2</p>
+
+<button class="bigButton" onclick="showScreen('screen2b')">READY</button>
+
+</div>
+
+
+<!-- SCREEN 2B -->
+<div id="screen2b" class="screen">
+
+<h2>Player 2 – Choose Moves</h2>
+
+<div id="p2Grid"></div>
+
+<button class="bigButton" onclick="startBattle()">CONFIRM</button>
+
+</div>
+
+
+<!-- SCREEN 3 -->
 <div id="screen3" class="screen">
 
-<h2>PLAYER 2</h2>
+<h2>Battle</h2>
 
-<div id="p2grid" class="grid"></div>
+<table id="resultTable"></table>
 
-<button id="confirmP2">CONFIRM</button>
+<div id="finalScore"></div>
 
-</div>
-
-
-<!-- RESULT SCREEN -->
-
-<div id="screenResult" class="screen">
-
-<h2>RESULT</h2>
-
-<table>
-<thead>
-<tr>
-<th>#</th>
-<th>P1</th>
-<th>P2</th>
-</tr>
-</thead>
-
-<tbody id="resultTable"></tbody>
-
-</table>
-
-<div id="finalResult"></div>
-
-<button id="replay">Replay</button>
-<button id="reset">Reset</button>
+<button class="bigButton" onclick="restart()">PLAY AGAIN</button>
 
 </div>
 
