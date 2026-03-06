@@ -1,37 +1,74 @@
 body{
 background:#000;
-color:#fff;
-font-family:Arial, Helvetica, sans-serif;
+color:white;
+font-family:Arial;
 text-align:center;
 margin:0;
 padding:20px;
 }
 
-.container{
+.screen{
+display:none;
 max-width:420px;
 margin:auto;
 }
 
+#screen1{
+display:block;
+}
+
+.stepper{
+margin:15px;
+font-size:20px;
+}
+
+button{
+padding:10px 16px;
+margin:5px;
+border:none;
+border-radius:6px;
+font-size:18px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:10px;
+margin:20px 0;
+}
+
+.moveRow{
+background:#111;
+padding:10px;
+border-radius:8px;
+}
+
+.moveRow span{
+font-size:28px;
+margin:0 8px;
+cursor:pointer;
+filter:grayscale(100%);
+}
+
+.selected{
+filter:none;
+}
+
 table{
 width:100%;
-border-collapse:collapse;
 margin-top:20px;
+border-collapse:collapse;
 }
 
-th,td{
+td,th{
 padding:10px;
-border-bottom:1px solid #333;
 font-size:22px;
-}
-
-.fade{
-opacity:0.6;
+border-bottom:1px solid #333;
 }
 
 .win{
 color:#4ade80;
 transform:scale(1.2);
-transition:0.2s;
 }
 
 .lose{
@@ -41,27 +78,4 @@ opacity:0.3;
 
 .draw{
 color:#facc15;
-}
-
-.resultBox{
-margin-top:25px;
-font-size:18px;
-}
-
-.buttons{
-margin-top:20px;
-}
-
-button{
-padding:10px 16px;
-margin:5px;
-border:none;
-border-radius:6px;
-background:#eee;
-cursor:pointer;
-font-size:16px;
-}
-
-button:hover{
-background:#ccc;
 }
