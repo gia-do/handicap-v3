@@ -128,28 +128,47 @@ for(let i=0;i<max;i++){
 let m1=p1Moves[i]
 let m2=p2Moves[i]
 
-if(!m1||!m2) continue
-
-let w=winner(m1,m2)
-
 let row=document.createElement("tr")
 
 let resultClass="draw"
+let center="VS"
+
+if(m1 && m2){
+
+let w=winner(m1,m2)
 
 if(w===1){
 score1++
 resultClass="win"
 }
 
-if(w===2){
+else if(w===2){
 score2++
 resultClass="lose"
 }
 
+}
+
+else if(m1 && !m2){
+
+score1++
+resultClass="win"
+center="FREE"
+
+}
+
+else if(!m1 && m2){
+
+score2++
+resultClass="lose"
+center="FREE"
+
+}
+
 row.innerHTML=`
-<td>${icons[m1]}</td>
-<td class="${resultClass}">VS</td>
-<td>${icons[m2]}</td>
+<td>${m1?icons[m1]:""}</td>
+<td class="${resultClass}">${center}</td>
+<td>${m2?icons[m2]:""}</td>
 `
 
 table.appendChild(row)
@@ -160,11 +179,5 @@ await new Promise(r=>setTimeout(r,600))
 
 document.getElementById("finalScore").innerHTML=
 `Final Score<br>Player1 ${score1} : ${score2} Player2`
-
-}
-
-function restart(){
-
-location.reload()
 
 }
